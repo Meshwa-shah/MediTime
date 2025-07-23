@@ -7,6 +7,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  
   const { token, setToken, userData } = useContext(AppContext);
 
   const logout = () => {
@@ -97,7 +98,7 @@ const Navbar = () => {
         ) : (
           <button
             onClick={() => navigate("/login")}
-            className="bg-gradient-to-r from-[#9708CC] to-[#43CBFF] hover:opacity-90 text-white px-6 py-2 rounded-full transition-all duration-300 font-medium shadow-md"
+            className="bg-gradient-to-r from-[#9708CC] to-[#43CBFF] hover:opacity-90 text-white px-6 py-2 rounded-full transition-all duration-300 font-medium shadow-md max-sm:hidden max-lg:hidden"
           >
             Create Account
           </button>
@@ -105,7 +106,7 @@ const Navbar = () => {
 
         <img
           onClick={() => setShowMenu(true)}
-          className="w-6 md:hidden cursor-pointer"
+          className="w-6 lg:hidden md:hidden cursor-pointer"
           src={assets.menu_icon}
           alt="menu"
         />
